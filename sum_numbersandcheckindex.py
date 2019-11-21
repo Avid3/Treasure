@@ -1,4 +1,5 @@
 
+"""
 n=input('enter target')
 n=int(n)
 x=[1,2,3,4]
@@ -11,8 +12,8 @@ for i in range(0,len(x)):
         sum=x[i]+y[j]
         
         if sum==n:
-            print(i+1,j+1)
-            lst[j]=[j,i]
+            
+            lst.append([i+1,j+1])
 lst.reverse();
 val=0;
 res=[]
@@ -33,5 +34,7 @@ def remove_reversed_duplicates(iterable):
             yield item
             
 res=list(remove_reversed_duplicates(res))
+print(res)
+
     
     

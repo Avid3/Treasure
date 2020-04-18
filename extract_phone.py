@@ -22,12 +22,15 @@ def isPhonenumber(a):
                     return True
 
 
-
-n=len(s)
-phonenumbers=[]
-for i in range(0,n-12):
-    w=s[i:i+12]
-    if isPhonenumber(w)==True:
-        phonenumbers.append(w)
+def phonenumbers(st):
+    n=len(st)
+    phonenumbers1=[]
+    for i in range(0,n-11):
+        w=st[i:i+12]
+        if isPhonenumber(w)==True:
+            phonenumbers1.append(w)
+    return(phonenumbers1)
+message='call me tomorrow at 9 on 112-122-1234 or 112-546-2389'
+a=phonenumbers(message)
         
     

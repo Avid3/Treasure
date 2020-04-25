@@ -1,24 +1,34 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Apr 17 15:42:53 2020
+Created on Fri Apr 24 23:37:28 2020
 
 @author: Amey
 """
-b='1'
-while b!='':
-    birthdays={'Andy':'5 March','Sam':'1 Dec','Julie':'17 November','Albert':'6 Dec'};
-    
-    a=input('Whose birthday do you want to search***/n Space to exit');
-    if a=='':
-        break
-
-    if a in birthdays:
-        print(birthdays[a])
-    else:
-        print('No information found. Do you have information for [y/n]')
-        b=input()
-        if b=='n':
+birthdays={'John':(5,11),'Arti':(1,4)}
+name='someone'
+while name!='':
+    print('Hi ! Whose birthday would you like to search for ?**Press Enter to exit')
+    name=input()
+    if name in birthdays:
+        print('Birthday is',birthdays[name])
+        print('\n Enter a new name or press Enter to exit')
+    if name not in birthdays:
+        if name=='':
             break
-        if b=='y':
-            birthdays[a]=input()
-            print('Updated')
+        print('Would you like to update and add birthday information for '+name+' Press Y for Yes and N for No')
+        decision=input()
+        if decision=='Y':
+            print('enter birthday as a tuple')
+            birthdays[name]=input()
+            print('Do you want to continue ?')
+            decision=input()
+            if decision=='Y':
+                continue
+            if decision=='N':
+                break
+        if decision=='N':
+            continue
+        else:
+            continue
+        
+
